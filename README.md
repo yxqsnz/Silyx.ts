@@ -1,5 +1,7 @@
 # Silyx.js
 
+![lines](https://tokei.rs/b1/github/yxqsnz/Silyx.ts)
+
 ## Um Simples bot para o discord
 
 ### Prerequistos
