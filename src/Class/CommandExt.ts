@@ -4,10 +4,10 @@ export type Categorys = 'Informação' | 'Miscelânea' | 'Diversão';
 
 export class CommandOptions {
   constructor(
-    name: String,
-    aliases: String[],
+    name: string,
+    aliases: string[],
     category: Categorys = 'Informação',
-    description: String = 'nada aqui ainda...',
+    description: string = 'nada aqui ainda...',
     onlyDev: Boolean = false,
     guildOnly: Boolean = false
   ) {
@@ -18,15 +18,15 @@ export class CommandOptions {
     this.category = category;
     this.guildOnly = guildOnly;
   }
-  name: String;
-  aliases: String[];
-  description: String;
+  name: string;
+  aliases: string[];
+  description: string;
   onlyDev: Boolean;
   guildOnly: Boolean;
   category: Categorys;
 }
 export class CommandContext {
-  constructor(client: Client, message: Message, args: String[], commandService: CommandService) {
+  constructor(client: Client, message: Message, args: string[], commandService: CommandService) {
     this.client = client;
     this.message = message;
     this.args = args;
@@ -34,6 +34,6 @@ export class CommandContext {
   }
   client: Client;
   message: Message;
-  args: String[];
+  args: string[];
   commandService: CommandService;
 }

@@ -10,7 +10,7 @@ export default class CommandService {
   public RegisterCommand = (command: Command) => {
     this.commands.push(command);
   };
-  public GetCommand = (query: String): Command | undefined => {
+  public GetCommand = (query: string): Command | undefined => {
     for (const command of this.commands) {
       if (command.options.name.toLowerCase() == query.toLowerCase()) return command;
       if (command.options.aliases.includes(query)) return command;
@@ -20,7 +20,7 @@ export default class CommandService {
   public GetCommands = (): Command[] => {
     return this.commands;
   };
-  public GenerateContext(client: Client, message: Message, args: String[]): CommandContext {
+  public GenerateContext(client: Client, message: Message, args: string[]): CommandContext {
     return new CommandContext(client, message, args, this);
   }
 }

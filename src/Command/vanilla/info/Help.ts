@@ -6,7 +6,7 @@ import { MessageEmbed } from 'discord.js';
 import { DISCORD_GREEN } from '../../../constants';
 import CommandService from '../../../Service/Command';
 
-const getCommandsByCategory = (query: String, service: CommandService) => {
+const getCommandsByCategory = (query: string, service: CommandService) => {
   const commands: CommandOptions[] = [];
   service.GetCommands().forEach((command) => {
     if (command.options.category.toLowerCase() == query.toLocaleLowerCase())
@@ -94,7 +94,7 @@ export default class HelpCommand extends Command {
 
         return;
       }
-      const commands: String[] = [];
+      const commands: string[] = [];
       getCommandsByCategory(info.action, commandService).forEach((command) => {
         commands.push(command.name);
       });

@@ -6,7 +6,7 @@ import { DISCORD_BLURPLE, GREEN_COLOR } from '../../../constants';
 import { HumanSize } from '../../../Util/Bindings';
 import { ExtractInfoFromButton } from '../../../Util/Button';
 import { GetRamUsage } from '../../../Util/Misc';
-const code = (text: String) => `\`${text}\``;
+const code = (text: string) => `\`${text}\``;
 export default class BotInfoCommand extends Command {
   constructor() {
     super(new CommandOptions('botinfo', ['silyx', 'bot'], 'Informação', 'informações do bot'));

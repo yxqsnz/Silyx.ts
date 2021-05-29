@@ -14,7 +14,7 @@ const removeCooldown = (user: CooldownUser) => {
   const index = delays.indexOf(user);
   if (index > -1) delays.splice(index, 1);
 };
-const format = (seconds: Number) => {
+const format = (seconds: number) => {
   if (seconds > 0) {
     return `${seconds} segundos`;
   } else {
@@ -25,9 +25,9 @@ const diff = (user: CooldownUser) =>
   process.hrtime(user.lastCommand).toString().slice(0, 1) as unknown as number;
 export default async (
   message: Message,
-  prefix: String,
+  prefix: string,
   commandService: CommandService,
-  commandDelay: Number
+  commandDelay: number
 ) => {
   if (
     message.author.bot ||
