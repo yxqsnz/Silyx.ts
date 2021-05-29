@@ -1,0 +1,25 @@
+{
+  "name": "silyx.js",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "git@github.com:yxqsnz/Silyx.js.git",
+  "author": "yxqsnz <bolaknt@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --build",
+    "run": "node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^15.6.1",
+    "@types/ws": "^7.4.4",
+    "eslint-config-airbnb": "^18.2.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "discord-buttons": "^2.4.1",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "human-size": "^1.1.0",
+    "nekos.life": "^2.0.7"
+  }
+}
