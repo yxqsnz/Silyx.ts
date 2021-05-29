@@ -19,4 +19,4 @@
 
 #### Rodando
 
-- `node dist/index.js` ou `yarn run`
+- `node dist/index.js` ou `yarn run run`

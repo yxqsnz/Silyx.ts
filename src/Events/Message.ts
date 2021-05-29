@@ -54,18 +54,18 @@ export default async (
       await message.reply('Me desculpe! Mas esse comando só pode ser executado numa guilda!');
       return;
     }
-    if (inCooldown(message.author.id)) {
-      const user = getUser(message.author.id);
-      if (user) {
-        const dif = diff(user);
-        const sdiff = (commandDelay as number) - dif;
-        if (sdiff < 1) removeCooldown(user);
-        await message
-          .reply(`Você tem que esperar \`${format(sdiff)}\` antes de executar outro comando.`)
-          .catch(() => {});
-
-        return;
-      }
+    // inCooldown(message.author.id) Removido por agora
+    if (false) {
+      // const user = getUser(message.author.id);
+      // if (user) {
+      //   const dif = diff(user);
+      //   const sdiff = (commandDelay as number) - dif;
+      //   if (sdiff < 1) removeCooldown(user);
+      //   await message
+      //     .reply(`Você tem que esperar \`${format(sdiff)}\` antes de executar outro comando.`)
+      //     .catch(() => {});
+      //   return;
+      // }
     } else {
       const user = new CooldownUser(message.author.id, process.hrtime());
       if (!delays.includes(user)) {

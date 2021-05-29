@@ -3,7 +3,7 @@ import DiscordButtons from 'discord-buttons';
 import { CommandContext, CommandOptions } from '../../../Class/CommandExt';
 import { ExtractInfoFromButton, GetRandomButtonColor } from '../../../Util/Button';
 import { MessageEmbed } from 'discord.js';
-import { DISCORD_BLURPLE } from '../../../constants';
+import { DISCORD_GREEN } from '../../../constants';
 import CommandService from '../../../Service/Command';
 
 const getCommandsByCategory = (query: String, service: CommandService) => {
@@ -31,7 +31,7 @@ export default class HelpCommand extends Command {
       const command = commandService.GetCommand(args[0]);
       if (command) {
         const commandEmbed = new MessageEmbed();
-        commandEmbed.setColor(DISCORD_BLURPLE);
+        commandEmbed.setColor(DISCORD_GREEN);
         commandEmbed.setTitle(`Informações de ${command.options.name}`);
         commandEmbed.setDescription(`
           Nome: \`${command.options.name}\`
@@ -66,9 +66,9 @@ export default class HelpCommand extends Command {
     );
 
     const helpEmbed = new MessageEmbed();
-    helpEmbed.setColor(DISCORD_BLURPLE);
+    helpEmbed.setColor(DISCORD_GREEN);
     helpEmbed.setTitle('Precisa de ajuda? Aqui meus comandos!');
-    helpEmbed.setTitle('*Caso você não consiga ver os botões, atualize seu Discord.*');
+    helpEmbed.setDescription('*Caso você não consiga ver os botões, atualize seu Discord.*');
     helpEmbed.setAuthor(
       message.author.tag,
       message.author.avatarURL({ dynamic: true, format: 'png', size: 1024 })?.toString()
