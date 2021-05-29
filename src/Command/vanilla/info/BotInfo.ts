@@ -27,7 +27,7 @@ export default class BotInfoCommand extends Command {
       emoji: ':rocket:',
       style: 'url',
       label: 'Código fonte',
-      url: 'https://github.com/yxqsnz/Silyx.js',
+      url: 'https://github.com/yxqsnz/Silyx.ts',
     });
 
     const menu = { advancedinfo: false };
@@ -86,7 +86,7 @@ export default class BotInfoCommand extends Command {
       }
     });
     collector.on('end', async (_: any) => {
-       msg.delete().catch(() => {})
+      msg.delete().catch(() => {});
     });
   }
 }
