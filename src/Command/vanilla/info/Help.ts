@@ -96,7 +96,9 @@ export default class HelpCommand extends Command {
       }
       const commands: string[] = [];
       getCommandsByCategory(info.action, commandService).forEach((command) => {
-        commands.push(command.name);
+        if (!command.onlyDev) {
+          commands.push(command.name); 
+        }
       });
       helpEmbed.setDescription(
         `existem ${commands.length} comandos na categoria ${info.action}: \`${commands.join(

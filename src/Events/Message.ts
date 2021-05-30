@@ -3,10 +3,10 @@ import CommandService from '../Service/Command';
 import CooldownUser from '../Class/CooldownUser';
 const delays: CooldownUser[] = [];
 
-const inCooldown = (id: string) => {
-  for (const user of delays) if (user.id == id && user.inCooldown) return true;
-  return false;
-};
+// const inCooldown = (id: string) => {
+//   for (const user of delays) if (user.id == id && user.inCooldown) return true;
+//   return false;
+// };
 const getUser = (id: string) => {
   for (const user of delays) if (user.id == id) return user;
 };
@@ -73,7 +73,8 @@ export default async (
       }
     }
     try {
-      command.execute(commandService.GenerateContext(message.client, message, args));
+      if (command.options.onlyDev && message.author.id != '567853754825572352') return;
+      command.execute(commandService.GenerateContext(message.client, message, args))
     } catch (e) {
       message
         .reply(`Me desculpe, mas ocorreu um erro ao executar esse comando ${e.message}`)
